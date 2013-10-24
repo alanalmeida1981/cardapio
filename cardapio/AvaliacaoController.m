@@ -41,7 +41,6 @@
     _ratingPontualidade = [[TQStarRatingView alloc] initWithFrame:CGRectMake(23, 299, 280, 48) numberOfStar:5];
     _ratingPontualidade.delegate = self;
     _ratingPontualidade.tag = 4;
-    
     AvaliacaoDB *db = [AvaliacaoDB sharedInstance];
     Avaliacao *avaliacao = [db getAvaliacao];
     if (avaliacao != nil) {

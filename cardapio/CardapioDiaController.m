@@ -33,24 +33,41 @@
     Acesso *acesso = [db getAcesso];
     NSString *guid = [acesso valueForKey:@"guid"];
     [CardapioParser parseWithGuid:guid withCallback:^(NSDictionary *cardapioDia) {
-        NSLog(@"cardapio: %@", cardapioDia);
-        NSString *data = [cardapioDia valueForKey:@"data"];
-        NSString *descricao = [cardapioDia valueForKey:@"descricao"];
-        NSString *foto = [cardapioDia valueForKey:@"foto"];
-        NSString *ingredientes = [cardapioDia valueForKey:@"ingredientes"];
-        
-        self.nbrTitulo.topItem.title = data;
-        
-        self.lblDescricao1.text = descricao;
-        self.lblDescricao2.text = descricao;
-        self.txtIngredientes.text = ingredientes;
-        __weak CardapioDiaController *this = self;
-        NSURL *url = [NSURL URLWithString:foto];
-        [self.imgCardapio setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-            [this.imgCardapio setNeedsLayout];
-            self.imgCardapio.contentMode = UIViewContentModeScaleAspectFill;
-        }];
+        //NSLog(@"cardapio: %@", cardapioDia);
+        if (cardapioDia == NULL) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Informação" message:@"Nenhum cardapio foi cadastrado. Retorne em alguns minutos." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        } else {
+            NSString *data = [cardapioDia valueForKey:@"data"];
+            NSString *descricao = [cardapioDia valueForKey:@"descricao"];
+            NSString *foto = [cardapioDia valueForKey:@"foto"];
+            NSString *ingredientes = [cardapioDia valueForKey:@"ingredientes"];
+            self.nbrTitulo.topItem.title = data;
+            self.lblDescricao1.text = descricao;
+            self.lblDescricao2.text = descricao;
+            self.txtIngredientes.text = ingredientes;
+            __weak CardapioDiaController *this = self;
+            NSURL *url = [NSURL URLWithString:foto];
+            [self.imgCardapio setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                [this.imgCardapio setNeedsLayout];
+                self.imgCardapio.contentMode = UIViewContentModeScaleAspectFill;
+            }];
+        }
     }];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        NSLog(@"user pressed Button Indexed 0");
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else
+    {
+        NSLog(@"user pressed Button Indexed 1");
+        // Any action can be performed here
+    }
 }
 
 - (void)viewDidLoad
