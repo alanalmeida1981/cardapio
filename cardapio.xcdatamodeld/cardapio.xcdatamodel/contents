@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Acesso" representedClassName="Acesso" syncable="YES">
-        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Avaliacao" representedClassName="Avaliacao" syncable="YES">
         <attribute name="atendimento" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
-        <attribute name="cardapio" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="comentarios" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comida" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="limpeza" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="pontualidade" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="Cardapio" representedClassName="Cardapio" syncable="YES">
+    <entity name="Colaborador" representedClassName="Colaborador" syncable="YES">
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Empresa" representedClassName="Empresa" syncable="YES">
+        <attribute name="codigo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Prato" representedClassName="Prato" syncable="YES">
         <attribute name="codigo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,8 +22,9 @@
         <relationship name="avaliacao" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Avaliacao" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Acesso" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Avaliacao" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Cardapio" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Empresa" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Prato" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Colaborador" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

@@ -1,15 +1,15 @@
 //
-//  Acesso.m
+//  Colaborador.m
 //  cardapio
 //
-//  Created by Administrador on 19/10/13.
+//  Created by Alan A de Almeida on 05/11/13.
 //  Copyright (c) 2013 fivebits. All rights reserved.
 //
 
-#import "Acesso.h"
+#import "Colaborador.h"
 
 
-@implementation Acesso
+@implementation Colaborador
 
 @dynamic guid;
 @dynamic nome;

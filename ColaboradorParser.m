@@ -1,31 +1,31 @@
 //
-//  UsuarioParser.m
+//  ColaboradorParser.m
 //  cardapio
 //
-//  Created by Administrador on 18/10/13.
+//  Created by Alan A de Almeida on 02/11/13.
 //  Copyright (c) 2013 fivebits. All rights reserved.
 //
 
-#import "UsuarioParser.h"
+#import "ColaboradorParser.h"
 
-#define BASE_URL @"http://consumorestful.fivebits.com.br/api/usuario/verificar/"
+@implementation ColaboradorParser
 
-@implementation UsuarioParser
+#define BASE_URL @"http://consumorestful.fivebits.com.br/api/colaborador/adicionar/"
 
-+ (void) parseWithName:(NSString *)name andPassword:(NSString *)password withCallback:(void(^)(NSDictionary *empresa))callback {
++ (void)addWithEmpresa:(NSString *)empresaID andNome:(NSString *)nome withCallback:(void (^)(NSDictionary *))callback{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        NSString *params = [NSString stringWithFormat:@"?nome=%@&senha=%@", name, password];
+        NSString *params = [NSString stringWithFormat:@"?empresaid=%@&nome=%@", empresaID, nome];
         NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingString:params]];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         NSHTTPURLResponse *response;
         NSError *error;
         NSData *bytes = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        NSDictionary *jsonEmpresa;
+        NSDictionary *jsonColaborador;
         if (error == nil && [response statusCode] == 200) {
-            jsonEmpresa = [NSJSONSerialization JSONObjectWithData:bytes options:kNilOptions error:&error];
+            jsonColaborador = [NSJSONSerialization JSONObjectWithData:bytes options:kNilOptions error:&error];
         }
         dispatch_sync(dispatch_get_main_queue(), ^{
-            callback(jsonEmpresa);
+            callback(jsonColaborador);
         });
     });
 }

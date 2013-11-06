@@ -2,7 +2,7 @@
 //  Avaliacao.m
 //  cardapio
 //
-//  Created by Administrador on 19/10/13.
+//  Created by Alan A de Almeida on 05/11/13.
 //  Copyright (c) 2013 fivebits. All rights reserved.
 //
 
@@ -12,8 +12,8 @@
 @implementation Avaliacao
 
 @dynamic atendimento;
-@dynamic cardapio;
 @dynamic comentarios;
+@dynamic comida;
 @dynamic limpeza;
 @dynamic pontualidade;
 

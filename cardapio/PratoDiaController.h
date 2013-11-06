@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Cardapio.h"
+#import "Prato.h"
 
-@interface CardapioDiaController : UIViewController<UITextFieldDelegate>
+@interface PratoDiaController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSair;
 @property (weak, nonatomic) IBOutlet UIImageView *imgCardapio;
@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtIngredientes;
 @property (weak, nonatomic) IBOutlet UINavigationBar *nbrTitulo;
 
-@property (strong, nonatomic) Cardapio *cardapio;
+@property (strong, nonatomic) Prato *prato;
 
 - (IBAction)sair:(id)sender;
 

@@ -1,8 +1,8 @@
 //
-//  Cardapio.h
+//  Prato.h
 //  cardapio
 //
-//  Created by Administrador on 19/10/13.
+//  Created by Alan A de Almeida on 05/11/13.
 //  Copyright (c) 2013 fivebits. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 @class Avaliacao;
 
-@interface Cardapio : NSManagedObject
+@interface Prato : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * codigo;
 @property (nonatomic, retain) NSString * descricao;

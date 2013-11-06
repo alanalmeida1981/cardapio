@@ -12,8 +12,8 @@
 
 @interface AvaliacaoController : UIViewController<StarRatingViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *lblNotaCardapio;
-@property (nonatomic,strong)TQStarRatingView *ratingCardapio;
+@property (weak, nonatomic) IBOutlet UILabel *lblNotaComida;
+@property (nonatomic,strong)TQStarRatingView *ratingComida;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblNotaLimpeza;
 @property (nonatomic,strong)TQStarRatingView *ratingLimpeza;
@@ -29,7 +29,7 @@
 @property (strong, nonatomic) Avaliacao *avaliacao;
 
 - (IBAction)sair:(id)sender;
-- (IBAction)confirmar:(id)sender;
+- (IBAction)salvar:(id)sender;
 
 
 @end

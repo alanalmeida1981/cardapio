@@ -8,7 +8,8 @@
 
 #import "AcessoController.h"
 #import "UsuarioParser.h"
-#import "AcessoDB.h"
+#import "ColaboradorParser.h"
+#import "ColaboradorDB.h"
 
 @interface AcessoController ()
 
@@ -40,20 +41,23 @@
 - (IBAction)btnEntrar:(id)sender {
     NSString *nome = self.txtNome.text;
     NSString *senha = self.txtSenha.text;
-    __weak AcessoController *this = self;
-    [UsuarioParser parseWithName:nome andPassword:senha withCallback:^(NSDictionary *acesso) {
-        NSLog(@"usuario: %@", acesso);
-        if (acesso != nil)
+    //__weak AcessoController *this = self;
+    [UsuarioParser parseWithName:nome andPassword:senha withCallback:^(NSDictionary *empresa) {
+        NSLog(@"empresa: %@", empresa);
+        if (empresa != nil)
         {
-            AcessoDB *db = [AcessoDB sharedInstance];
-            if (self.acesso == nil){
-                self.acesso = [db addAcesso];
-            }
-            self.acesso.guid = [acesso valueForKey:@"guid"];
-            BOOL existe = [db existAcessoWithGuid:self.acesso.guid];
-            if (!existe) {
-                self.acesso.nome = [acesso valueForKey:@"nome"];
-                [db salvar];
+            NSString *empresaID = [empresa valueForKey:@"id"];
+            NSString *nome = [[UIDevice currentDevice] name];
+            nome = [nome stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+            ColaboradorDB *db = [ColaboradorDB sharedInstance];
+            self.colaborador = [db get];
+            if (self.colaborador == nil){
+                [ColaboradorParser addWithEmpresa:empresaID andNome:nome withCallback:^(NSDictionary *colaborador) {
+                    self.colaborador = [db insert];
+                    self.colaborador.guid = [colaborador valueForKey:@"guid"];
+                    self.colaborador.nome = nome;
+                    [db save];
+                }];
             }
             [self performSegueWithIdentifier:@"acesso" sender:self];
         }
@@ -62,6 +66,7 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Nome e/ou senha não existe." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
+
     }];
 }
 

@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AcessoDB.h"
+#import "ColaboradorDB.h"
 
 @interface AcessoController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNome;
 @property (weak, nonatomic) IBOutlet UITextField *txtSenha;
 
-@property (strong, nonatomic) Acesso *acesso;
+@property (strong, nonatomic) Colaborador *colaborador;
 
 - (IBAction)btnEntrar:(id)sender;
 

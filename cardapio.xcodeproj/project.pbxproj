@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8300DDA11812C45E00A3B342 /* Acesso.m in Sources */ = {isa = PBXBuildFile; fileRef = 8300DDA01812C45E00A3B342 /* Acesso.m */; };
-		8300DDA71812C45E00A3B342 /* Cardapio.m in Sources */ = {isa = PBXBuildFile; fileRef = 8300DDA61812C45E00A3B342 /* Cardapio.m */; };
-		8300DDAA1812E8BD00A3B342 /* CardapioParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8300DDA91812E8BD00A3B342 /* CardapioParser.m */; };
-		835507B41813653100AC7F70 /* Avaliacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 835507B31813653100AC7F70 /* Avaliacao.m */; };
+		8300DDAA1812E8BD00A3B342 /* PratoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8300DDA91812E8BD00A3B342 /* PratoParser.m */; };
 		835507B7181370C100AC7F70 /* AvaliacaoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835507B6181370C100AC7F70 /* AvaliacaoParser.m */; };
 		8368DFB9180CB93D0065B993 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8368DFB8180CB93D0065B993 /* Foundation.framework */; };
 		8368DFBB180CB93D0065B993 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8368DFBA180CB93D0065B993 /* CoreGraphics.framework */; };
@@ -51,7 +48,7 @@
 		83FA9341180CD121005DB9DD /* star3.png in Resources */ = {isa = PBXBuildFile; fileRef = 83FA933F180CD121005DB9DD /* star3.png */; };
 		83FA9342180CD121005DB9DD /* star4.png in Resources */ = {isa = PBXBuildFile; fileRef = 83FA9340180CD121005DB9DD /* star4.png */; };
 		83FA9344180CD4E5005DB9DD /* prato-02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83FA9343180CD4E5005DB9DD /* prato-02.jpg */; };
-		83FA9349180CDFC6005DB9DD /* CardapioDiaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FA9348180CDFC6005DB9DD /* CardapioDiaController.m */; };
+		83FA9349180CDFC6005DB9DD /* PratoDiaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FA9348180CDFC6005DB9DD /* PratoDiaController.m */; };
 		83FA934C180CE220005DB9DD /* AvaliacaoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FA934B180CE220005DB9DD /* AvaliacaoController.m */; };
 		83FA934E180CE837005DB9DD /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 83FA934D180CE837005DB9DD /* picture.png */; };
 		83FA9351180CF73D005DB9DD /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA934F180CF73D005DB9DD /* iPad.storyboard */; };
@@ -65,7 +62,12 @@
 		83FB81761810EB1B00C8F1CD /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB81751810EB1B00C8F1CD /* TQStarRatingView.m */; };
 		83FB817A1811F7F800C8F1CD /* AcessoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB81791811F7F800C8F1CD /* AcessoController.m */; };
 		83FB81811811F8E100C8F1CD /* UsuarioParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB81801811F8E100C8F1CD /* UsuarioParser.m */; };
-		83FB818418120DC900C8F1CD /* AcessoDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB818318120DC900C8F1CD /* AcessoDB.m */; };
+		83FB818418120DC900C8F1CD /* ColaboradorDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB818318120DC900C8F1CD /* ColaboradorDB.m */; };
+		84425DC11829C6F9002E601C /* Avaliacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 84425DC01829C6F9002E601C /* Avaliacao.m */; };
+		84425DC41829C6F9002E601C /* Prato.m in Sources */ = {isa = PBXBuildFile; fileRef = 84425DC31829C6F9002E601C /* Prato.m */; };
+		84425DC71829C6F9002E601C /* Empresa.m in Sources */ = {isa = PBXBuildFile; fileRef = 84425DC61829C6F9002E601C /* Empresa.m */; };
+		84425DCA1829C6F9002E601C /* Colaborador.m in Sources */ = {isa = PBXBuildFile; fileRef = 84425DC91829C6F9002E601C /* Colaborador.m */; };
+		8460D8511825DC23009C9324 /* ColaboradorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460D8501825DC23009C9324 /* ColaboradorParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,14 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8300DD9F1812C45E00A3B342 /* Acesso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Acesso.h; sourceTree = "<group>"; };
-		8300DDA01812C45E00A3B342 /* Acesso.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Acesso.m; sourceTree = "<group>"; };
-		8300DDA51812C45E00A3B342 /* Cardapio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cardapio.h; sourceTree = "<group>"; };
-		8300DDA61812C45E00A3B342 /* Cardapio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cardapio.m; sourceTree = "<group>"; };
-		8300DDA81812E8BD00A3B342 /* CardapioParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardapioParser.h; sourceTree = "<group>"; };
-		8300DDA91812E8BD00A3B342 /* CardapioParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardapioParser.m; sourceTree = "<group>"; };
-		835507B21813653100AC7F70 /* Avaliacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Avaliacao.h; sourceTree = "<group>"; };
-		835507B31813653100AC7F70 /* Avaliacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Avaliacao.m; sourceTree = "<group>"; };
+		8300DDA81812E8BD00A3B342 /* PratoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PratoParser.h; sourceTree = "<group>"; };
+		8300DDA91812E8BD00A3B342 /* PratoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PratoParser.m; sourceTree = "<group>"; };
 		835507B5181370C100AC7F70 /* AvaliacaoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvaliacaoParser.h; sourceTree = "<group>"; };
 		835507B6181370C100AC7F70 /* AvaliacaoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvaliacaoParser.m; sourceTree = "<group>"; };
 		8368DFB5180CB93D0065B993 /* cardapio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cardapio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,8 +143,8 @@
 		83FA933F180CD121005DB9DD /* star3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star3.png; sourceTree = "<group>"; };
 		83FA9340180CD121005DB9DD /* star4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star4.png; sourceTree = "<group>"; };
 		83FA9343180CD4E5005DB9DD /* prato-02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "prato-02.jpg"; sourceTree = "<group>"; };
-		83FA9347180CDFC6005DB9DD /* CardapioDiaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardapioDiaController.h; sourceTree = "<group>"; };
-		83FA9348180CDFC6005DB9DD /* CardapioDiaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardapioDiaController.m; sourceTree = "<group>"; };
+		83FA9347180CDFC6005DB9DD /* PratoDiaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PratoDiaController.h; sourceTree = "<group>"; };
+		83FA9348180CDFC6005DB9DD /* PratoDiaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PratoDiaController.m; sourceTree = "<group>"; };
 		83FA934A180CE220005DB9DD /* AvaliacaoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvaliacaoController.h; sourceTree = "<group>"; };
 		83FA934B180CE220005DB9DD /* AvaliacaoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvaliacaoController.m; sourceTree = "<group>"; };
 		83FA934D180CE837005DB9DD /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
@@ -167,8 +163,18 @@
 		83FB81791811F7F800C8F1CD /* AcessoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcessoController.m; sourceTree = "<group>"; };
 		83FB817F1811F8E100C8F1CD /* UsuarioParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsuarioParser.h; sourceTree = "<group>"; };
 		83FB81801811F8E100C8F1CD /* UsuarioParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsuarioParser.m; sourceTree = "<group>"; };
-		83FB818218120DC900C8F1CD /* AcessoDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcessoDB.h; sourceTree = "<group>"; };
-		83FB818318120DC900C8F1CD /* AcessoDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcessoDB.m; sourceTree = "<group>"; };
+		83FB818218120DC900C8F1CD /* ColaboradorDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColaboradorDB.h; sourceTree = "<group>"; };
+		83FB818318120DC900C8F1CD /* ColaboradorDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColaboradorDB.m; sourceTree = "<group>"; };
+		84425DBF1829C6F9002E601C /* Avaliacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Avaliacao.h; sourceTree = "<group>"; };
+		84425DC01829C6F9002E601C /* Avaliacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Avaliacao.m; sourceTree = "<group>"; };
+		84425DC21829C6F9002E601C /* Prato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prato.h; sourceTree = "<group>"; };
+		84425DC31829C6F9002E601C /* Prato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prato.m; sourceTree = "<group>"; };
+		84425DC51829C6F9002E601C /* Empresa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Empresa.h; sourceTree = "<group>"; };
+		84425DC61829C6F9002E601C /* Empresa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Empresa.m; sourceTree = "<group>"; };
+		84425DC81829C6F9002E601C /* Colaborador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colaborador.h; sourceTree = "<group>"; };
+		84425DC91829C6F9002E601C /* Colaborador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colaborador.m; sourceTree = "<group>"; };
+		8460D84F1825DC23009C9324 /* ColaboradorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColaboradorParser.h; sourceTree = "<group>"; };
+		8460D8501825DC23009C9324 /* ColaboradorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColaboradorParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,8 +207,8 @@
 			children = (
 				83FB81691810DC6A00C8F1CD /* AvaliacaoDB.h */,
 				83FB816A1810DC6A00C8F1CD /* AvaliacaoDB.m */,
-				83FB818218120DC900C8F1CD /* AcessoDB.h */,
-				83FB818318120DC900C8F1CD /* AcessoDB.m */,
+				83FB818218120DC900C8F1CD /* ColaboradorDB.h */,
+				83FB818318120DC900C8F1CD /* ColaboradorDB.m */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -348,8 +354,8 @@
 		83FA9345180CDE38005DB9DD /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				83FA9347180CDFC6005DB9DD /* CardapioDiaController.h */,
-				83FA9348180CDFC6005DB9DD /* CardapioDiaController.m */,
+				83FA9347180CDFC6005DB9DD /* PratoDiaController.h */,
+				83FA9348180CDFC6005DB9DD /* PratoDiaController.m */,
 				83FA934A180CE220005DB9DD /* AvaliacaoController.h */,
 				83FA934B180CE220005DB9DD /* AvaliacaoController.m */,
 				83FB81781811F7F800C8F1CD /* AcessoController.h */,
@@ -370,14 +376,9 @@
 		83FA9360180F68F4005DB9DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8460D8821825E13C009C9324 /* Class */,
 				8300DD9E1812C40500A3B342 /* DB */,
-				835507B21813653100AC7F70 /* Avaliacao.h */,
-				835507B31813653100AC7F70 /* Avaliacao.m */,
 				83FA9354180F62D6005DB9DD /* cardapio.xcdatamodeld */,
-				8300DDA51812C45E00A3B342 /* Cardapio.h */,
-				8300DDA61812C45E00A3B342 /* Cardapio.m */,
-				8300DD9F1812C45E00A3B342 /* Acesso.h */,
-				8300DDA01812C45E00A3B342 /* Acesso.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -396,12 +397,29 @@
 			children = (
 				83FB817F1811F8E100C8F1CD /* UsuarioParser.h */,
 				83FB81801811F8E100C8F1CD /* UsuarioParser.m */,
-				8300DDA81812E8BD00A3B342 /* CardapioParser.h */,
-				8300DDA91812E8BD00A3B342 /* CardapioParser.m */,
+				8300DDA81812E8BD00A3B342 /* PratoParser.h */,
+				8300DDA91812E8BD00A3B342 /* PratoParser.m */,
 				835507B5181370C100AC7F70 /* AvaliacaoParser.h */,
 				835507B6181370C100AC7F70 /* AvaliacaoParser.m */,
+				8460D84F1825DC23009C9324 /* ColaboradorParser.h */,
+				8460D8501825DC23009C9324 /* ColaboradorParser.m */,
 			);
 			name = HTTP;
+			sourceTree = "<group>";
+		};
+		8460D8821825E13C009C9324 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				84425DC81829C6F9002E601C /* Colaborador.h */,
+				84425DC91829C6F9002E601C /* Colaborador.m */,
+				84425DC51829C6F9002E601C /* Empresa.h */,
+				84425DC61829C6F9002E601C /* Empresa.m */,
+				84425DC21829C6F9002E601C /* Prato.h */,
+				84425DC31829C6F9002E601C /* Prato.m */,
+				84425DBF1829C6F9002E601C /* Avaliacao.h */,
+				84425DC01829C6F9002E601C /* Avaliacao.m */,
+			);
+			name = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +469,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = fivebits;
 				TargetAttributes = {
+					8368DFB4180CB93D0065B993 = {
+						DevelopmentTeam = GA2JT7CVGE;
+					};
 					8368DFD8180CB93D0065B993 = {
 						TestTargetID = 8368DFB4180CB93D0065B993;
 					};
@@ -521,31 +542,33 @@
 			files = (
 				83CA79441812FF4A00EA26EA /* UIImage+MultiFormat.m in Sources */,
 				83CA79451812FF4A00EA26EA /* UIImage+WebP.m in Sources */,
+				84425DCA1829C6F9002E601C /* Colaborador.m in Sources */,
 				8368DFC9180CB93D0065B993 /* AppDelegate.m in Sources */,
+				8460D8511825DC23009C9324 /* ColaboradorParser.m in Sources */,
 				83CA79401812FF4A00EA26EA /* SDWebImageManager.m in Sources */,
-				8300DDA71812C45E00A3B342 /* Cardapio.m in Sources */,
 				83FA934C180CE220005DB9DD /* AvaliacaoController.m in Sources */,
 				83CA793A1812FF4A00EA26EA /* NSData+GIF.m in Sources */,
 				83CA793E1812FF4A00EA26EA /* SDWebImageDownloader.m in Sources */,
 				83FA9356180F62D6005DB9DD /* cardapio.xcdatamodeld in Sources */,
-				83FB818418120DC900C8F1CD /* AcessoDB.m in Sources */,
+				84425DC71829C6F9002E601C /* Empresa.m in Sources */,
+				83FB818418120DC900C8F1CD /* ColaboradorDB.m in Sources */,
 				83FB817A1811F7F800C8F1CD /* AcessoController.m in Sources */,
 				8368DFC5180CB93D0065B993 /* main.m in Sources */,
-				8300DDAA1812E8BD00A3B342 /* CardapioParser.m in Sources */,
+				8300DDAA1812E8BD00A3B342 /* PratoParser.m in Sources */,
 				83CA79391812FF4A00EA26EA /* MKAnnotationView+WebCache.m in Sources */,
 				83FB81811811F8E100C8F1CD /* UsuarioParser.m in Sources */,
 				83CA79431812FF4A00EA26EA /* UIImage+GIF.m in Sources */,
 				83CA79421812FF4A00EA26EA /* UIButton+WebCache.m in Sources */,
+				84425DC41829C6F9002E601C /* Prato.m in Sources */,
 				83FB81761810EB1B00C8F1CD /* TQStarRatingView.m in Sources */,
 				83CA79461812FF4A00EA26EA /* UIImageView+WebCache.m in Sources */,
-				835507B41813653100AC7F70 /* Avaliacao.m in Sources */,
+				84425DC11829C6F9002E601C /* Avaliacao.m in Sources */,
 				83CA79411812FF4A00EA26EA /* SDWebImagePrefetcher.m in Sources */,
 				835507B7181370C100AC7F70 /* AvaliacaoParser.m in Sources */,
 				83CA793D1812FF4A00EA26EA /* SDWebImageDecoder.m in Sources */,
 				83CA793B1812FF4A00EA26EA /* SDImageCache.m in Sources */,
 				83CA793C1812FF4A00EA26EA /* SDWebImageCompat.m in Sources */,
-				8300DDA11812C45E00A3B342 /* Acesso.m in Sources */,
-				83FA9349180CDFC6005DB9DD /* CardapioDiaController.m in Sources */,
+				83FA9349180CDFC6005DB9DD /* PratoDiaController.m in Sources */,
 				83CA793F1812FF4A00EA26EA /* SDWebImageDownloaderOperation.m in Sources */,
 				83FB816B1810DC6A00C8F1CD /* AvaliacaoDB.m in Sources */,
 			);
@@ -684,10 +707,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cardapio/cardapio-Prefix.pch";
 				INFOPLIST_FILE = "cardapio/cardapio-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -697,10 +723,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cardapio/cardapio-Prefix.pch";
 				INFOPLIST_FILE = "cardapio/cardapio-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

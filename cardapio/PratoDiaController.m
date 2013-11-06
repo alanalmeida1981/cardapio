@@ -6,18 +6,20 @@
 //  Copyright (c) 2013 fivebits. All rights reserved.
 //
 
-#import "CardapioDiaController.h"
-#import "CardapioParser.h"
-#import "Cardapio.h"
+#import "PratoDiaController.h"
+#import "PratoParser.h"
+#import "Prato.h"
 #import "UIImageView+WebCache.h"
-#import "AcessoDB.h"
+#import "ColaboradorDB.h"
 #import <time.h>
 
-@interface CardapioDiaController () <UIBarPositioningDelegate>
+@interface PratoDiaController () <UIBarPositioningDelegate>
 
 @end
 
-@implementation CardapioDiaController
+@implementation PratoDiaController
+
+#define URL @"http://consumo.fivebits.com.br/"
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,9 +31,9 @@
 }
 
 - (void)loadCardapio{
-    AcessoDB *db = [AcessoDB sharedInstance];
-    Acesso *acesso = [db getAcesso];
-    NSString *guid = [acesso valueForKey:@"guid"];
+    ColaboradorDB *db = [ColaboradorDB sharedInstance];
+    Colaborador *colaborador = [db get];
+    NSString *guid = [colaborador valueForKey:@"guid"];
     [CardapioParser parseWithGuid:guid withCallback:^(NSDictionary *cardapioDia) {
         //NSLog(@"cardapio: %@", cardapioDia);
         if (cardapioDia == NULL) {
@@ -39,14 +41,16 @@
             [alert show];
         } else {
             NSString *data = [cardapioDia valueForKey:@"data"];
+            data = [data substringToIndex:10];
             NSString *descricao = [cardapioDia valueForKey:@"descricao"];
             NSString *foto = [cardapioDia valueForKey:@"foto"];
+            foto = [NSString stringWithFormat:@"%@%@", URL, foto];
             NSString *ingredientes = [cardapioDia valueForKey:@"ingredientes"];
             self.nbrTitulo.topItem.title = data;
             self.lblDescricao1.text = descricao;
             self.lblDescricao2.text = descricao;
             self.txtIngredientes.text = ingredientes;
-            __weak CardapioDiaController *this = self;
+            __weak PratoDiaController *this = self;
             NSURL *url = [NSURL URLWithString:foto];
             [self.imgCardapio setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
                 [this.imgCardapio setNeedsLayout];

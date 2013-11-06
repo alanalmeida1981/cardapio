@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Acesso.h"
+#import "Empresa.h"
 
 @interface UsuarioParser : NSObject
 
-+ (void) parseWithName:(NSString *)nome andPassword:(NSString *)senha withCallback:(void(^)(NSDictionary *acesso))callback;
++ (void) parseWithName:(NSString *)name andPassword:(NSString *)password withCallback:(void(^)(NSDictionary *empresa))callback;
 
 @end

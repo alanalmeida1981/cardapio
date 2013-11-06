@@ -9,7 +9,7 @@
 #import "AvaliacaoController.h"
 #import "AvaliacaoDB.h"
 #import "AvaliacaoParser.h"
-#import "AcessoDB.h"
+#import "ColaboradorDB.h"
 
 @interface AvaliacaoController ()
 
@@ -29,9 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _ratingCardapio = [[TQStarRatingView alloc] initWithFrame:CGRectMake(23, 86, 280, 48) numberOfStar:5];
-    _ratingCardapio.delegate = self;
-    _ratingCardapio.tag = 1;
+    _ratingComida = [[TQStarRatingView alloc] initWithFrame:CGRectMake(23, 86, 280, 48) numberOfStar:5];
+    _ratingComida.delegate = self;
+    _ratingComida.tag = 1;
     _ratingLimpeza = [[TQStarRatingView alloc] initWithFrame:CGRectMake(23, 157, 280, 48) numberOfStar:5];
     _ratingLimpeza.delegate = self;
     _ratingLimpeza.tag = 2;
@@ -44,13 +44,13 @@
     AvaliacaoDB *db = [AvaliacaoDB sharedInstance];
     Avaliacao *avaliacao = [db getAvaliacao];
     if (avaliacao != nil) {
-        [_ratingCardapio setScore:[avaliacao.cardapio floatValue] withAnimation:YES];
+        [_ratingComida setScore:[avaliacao.comida floatValue] withAnimation:YES];
         [_ratingLimpeza setScore:[avaliacao.limpeza floatValue] withAnimation:YES];
         [_ratingAtendimento setScore:[avaliacao.atendimento floatValue] withAnimation:YES];
         [_ratingPontualidade setScore:[avaliacao.pontualidade floatValue] withAnimation:YES];
         NSLog(@"avaliacao: %@", avaliacao);
     }
-    [self.view addSubview:_ratingCardapio];
+    [self.view addSubview:_ratingComida];
     [self.view addSubview:_ratingLimpeza];
     [self.view addSubview:_ratingAtendimento];
     [self.view addSubview:_ratingPontualidade];
@@ -60,7 +60,7 @@
 {
     NSString *nota = [NSString stringWithFormat:@"%0.1f", score * 10];
     if (view.tag == 1) {
-        self.lblNotaCardapio.text = [NSString stringWithFormat:@"%@", nota];
+        self.lblNotaComida.text = [NSString stringWithFormat:@"%@", nota];
     } else if (view.tag == 2) {
         self.lblNotaLimpeza.text = [NSString stringWithFormat:@"%@", nota];
     } else if (view.tag == 3) {
@@ -85,18 +85,18 @@
     if (self.avaliacao == nil){
         self.avaliacao = [db addAvaliacao];
     }
-    self.avaliacao.cardapio = @([self.lblNotaCardapio.text floatValue]);
+    self.avaliacao.comida = @([self.lblNotaComida.text floatValue]);
     self.avaliacao.limpeza = @([self.lblNotaLimpeza.text floatValue]);
     self.avaliacao.atendimento = @([self.lblNotaAtendimento.text floatValue]);
     self.avaliacao.pontualidade = @([self.lblNotaPontualidade.text floatValue]);
     self.avaliacao.comentarios = self.txtComentarios.text;
     NSLog(@"avaliacao: %@", self.avaliacao);
     
-     AcessoDB *db2 = [AcessoDB sharedInstance];
-     Acesso *acesso = [db2 getAcesso];
-     NSString *guid = [acesso valueForKey:@"guid"];
+     ColaboradorDB *db2 = [ColaboradorDB sharedInstance];
+     Colaborador *colaborador = [db2 get];
+     NSString *guid = [colaborador valueForKey:@"guid"];
      
-    [AvaliacaoParser parseWithGuid:guid andCardapio:self.lblNotaCardapio.text andLimpeza:self.lblNotaLimpeza.text andAtendimento:self.lblNotaAtendimento.text andPontualidade:self.lblNotaPontualidade.text andComentarios:self.avaliacao.comentarios withCallback:^(NSDictionary *success) {
+    [AvaliacaoParser parseWithGuid:guid andCardapio:self.lblNotaComida.text andLimpeza:self.lblNotaLimpeza.text andAtendimento:self.lblNotaAtendimento.text andPontualidade:self.lblNotaPontualidade.text andComentarios:self.avaliacao.comentarios withCallback:^(NSDictionary *success) {
         if (success != nil)
         {
             [self.tabBarController setSelectedIndex:0];

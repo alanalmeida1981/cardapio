@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>497C0779-FED0-44E8-9E10-D3CACE926E84</string>
+	<key>IDESourceControlProjectName</key>
+	<string>cardapio</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B441749D-9E9B-4C9F-A987-A9B117600F37</key>
+		<string>https://github.com/alanalmeida1981/cardapio.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cardapio.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B441749D-9E9B-4C9F-A987-A9B117600F37</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alanalmeida1981/cardapio.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B441749D-9E9B-4C9F-A987-A9B117600F37</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B441749D-9E9B-4C9F-A987-A9B117600F37</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cardapio</string>
+		</dict>
+	</array>
+</dict>
+</plist>

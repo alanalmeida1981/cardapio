@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--Acesso Controller-->
@@ -31,7 +31,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MpI-wp-H1D">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="paguemenos" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MpI-wp-H1D">
                                         <rect key="frame" x="20" y="73" width="240" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,7 +43,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6w-Fe-RDw">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="596800" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6w-Fe-RDw">
                                         <rect key="frame" x="20" y="132" width="240" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="256" y="110"/>
         </scene>
-        <!--Cardapio Dia Controller - Cardapio do Dia-->
+        <!--Prato Dia Controller - Cardapio do Dia-->
         <scene sceneID="B7F-fl-GVa">
             <objects>
-                <viewController storyboardIdentifier="vwCardapioDia" id="sk9-2z-Lc2" customClass="CardapioDiaController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vwCardapioDia" id="sk9-2z-Lc2" customClass="PratoDiaController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wfh-80-USe"/>
                         <viewControllerLayoutGuide type="bottom" id="99w-53-T0r"/>
@@ -193,6 +193,8 @@
                             <constraint firstItem="mJV-EW-Zvm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wfh-80-USe" secondAttribute="bottom" constant="44" id="dVg-ae-2LC"/>
                             <constraint firstAttribute="centerX" secondItem="mJV-EW-Zvm" secondAttribute="centerX" id="dzd-m6-H3q"/>
                             <constraint firstItem="PgP-9p-UlT" firstAttribute="leading" secondItem="a4T-qK-m85" secondAttribute="leading" id="e2b-Mc-vZr"/>
+                            <constraint firstItem="mJV-EW-Zvm" firstAttribute="leading" secondItem="a4T-qK-m85" secondAttribute="leading" id="fYN-vw-cxa"/>
+                            <constraint firstAttribute="trailing" secondItem="mJV-EW-Zvm" secondAttribute="trailing" id="ge9-1E-H4d"/>
                             <constraint firstAttribute="trailing" secondItem="PgP-9p-UlT" secondAttribute="trailing" id="jBB-9s-4YP"/>
                             <constraint firstItem="mJV-EW-Zvm" firstAttribute="leading" secondItem="a4T-qK-m85" secondAttribute="leading" id="qsc-l1-d69"/>
                             <constraint firstAttribute="centerX" secondItem="b23-fZ-DZN" secondAttribute="centerX" id="vcw-eM-7lS"/>
@@ -440,7 +442,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nota para Cardapio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-g0-JdC">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nota para Comida" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-g0-JdC">
                                 <rect key="frame" x="20" y="65" width="154" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -482,7 +484,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="lblNotaAtendimento" destination="l5e-Mm-r5O" id="thi-Ta-smK"/>
-                        <outlet property="lblNotaCardapio" destination="QjG-BD-Nd7" id="Osw-fv-Tkp"/>
+                        <outlet property="lblNotaComida" destination="QjG-BD-Nd7" id="2qR-d8-hjt"/>
                         <outlet property="lblNotaLimpeza" destination="mCo-lr-jbR" id="CTS-5k-TJH"/>
                         <outlet property="lblNotaPontualidade" destination="NhI-pe-z8i" id="NNC-66-0at"/>
                         <outlet property="txtComentarios" destination="oAR-Oy-YdF" id="SYy-98-HZM"/>

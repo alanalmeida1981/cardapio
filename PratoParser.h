@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Cardapio.h"
+#import "Prato.h"
 
 @interface CardapioParser : NSObject
 

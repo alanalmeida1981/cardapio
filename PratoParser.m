@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 fivebits. All rights reserved.
 //
 
-#import "CardapioParser.h"
+#import "PratoParser.h"
 
-#define BASE_URL @"http://prato.fivebits.com.br/api/cardapio/dodia/"
+#define BASE_URL @"http://consumorestful.fivebits.com.br/api/prato/dodia/"
 
 //http://192.168.80.128/portal/api/cardapio/dodia/?guid=b91fb132-2255-460f-859b-7d67041262fa
 

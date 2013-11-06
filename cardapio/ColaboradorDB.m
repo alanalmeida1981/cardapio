@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 fivebits. All rights reserved.
 //
 
-#import "AcessoDB.h"
+#import "ColaboradorDB.h"
 #import <CoreData/CoreData.h>
 
-@interface AcessoDB()
+@interface ColaboradorDB()
 
 @property (readonly, nonatomic, strong) NSManagedObjectModel *model;
 @property (readonly, nonatomic, strong) NSPersistentStoreCoordinator *coordinator;
@@ -17,16 +17,18 @@
 
 @end
 
-@implementation AcessoDB
+@implementation ColaboradorDB
 
 @synthesize model = _model;
 @synthesize coordinator = _coordinator;
 @synthesize contexto = _contexto;
 
-static AcessoDB *instance;
+static ColaboradorDB *instance;
 
-+ (AcessoDB *)sharedInstance {
-    if (instance == nil) instance = [[AcessoDB alloc]init];
+#define TABLE @"Colaborador"
+
++ (ColaboradorDB *) sharedInstance {
+    if (instance == nil) instance = [[ColaboradorDB alloc]init];
     return instance;
 }
 
@@ -39,16 +41,13 @@ static AcessoDB *instance;
     return _model;
 }
 
-- (NSPersistentStoreCoordinator *)coordinator {
+- (NSPersistentStoreCoordinator *) coordinator {
     if (_coordinator == nil){
         _coordinator = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:self.model];
-        
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        url = [url URLByAppendingPathComponent:@"Acesso.db"];
-        
+        url = [url URLByAppendingPathComponent:@"Colaborador.db"];
         NSError *error;
         NSPersistentStore *store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error];
-        
         if (store == nil){
             NSLog(@"Erro ao abrir banco: %@", error);
             _coordinator = nil;
@@ -67,26 +66,22 @@ static AcessoDB *instance;
 
 - (NSFetchedResultsController *)resultsController {
     if (!_resultsController){
-        NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Acesso"];
+        NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:TABLE];
         NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"modelo" ascending:YES];
-        
         [request setSortDescriptors:@[sort]];
-        
         _resultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.contexto sectionNameKeyPath:nil cacheName:nil];
-        
         [_resultsController performFetch:nil];
     }
     return _resultsController;
 }
 
 #pragma mark - Repo methods
-- (Acesso *) addAcesso {
-    Acesso *acesso = [NSEntityDescription insertNewObjectForEntityForName:@"Acesso" inManagedObjectContext:self.contexto];
-    
-    return acesso;
+- (Colaborador *) insert {
+    Colaborador *colaborador = [NSEntityDescription insertNewObjectForEntityForName:TABLE inManagedObjectContext:self.contexto];
+    return colaborador;
 }
 
-- (BOOL) salvar {
+- (BOOL) save {
     NSError *error;
     BOOL success = [self.contexto save:&error];
     if (!success){
@@ -96,35 +91,39 @@ static AcessoDB *instance;
     return success;
 }
 
-- (void) excluir:(Acesso *)acesso {
-    [self.contexto deleteObject:acesso];
-    [self salvar];
+- (void) exclude:(Colaborador *)colaborador {
+    [self.contexto deleteObject:colaborador];
+    [self save];
 }
 
-- (NSArray *)listAcessos{
-    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Acesso"];
-    NSArray *acessos = [self.contexto executeFetchRequest:request error:nil];
-    return acessos;
+- (NSArray *)list{
+    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:TABLE];
+    NSArray *colaboradores = [self.contexto executeFetchRequest:request error:nil];
+    return colaboradores;
 }
 
-- (Acesso *) getAcesso{
-    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Acesso"];    
+- (Colaborador *) get{
+    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:TABLE];
     NSError *error;
-    NSArray *acessos = [self.contexto executeFetchRequest:request error:&error];
-    NSLog(@"ERRO: %@", error);
-    Acesso *acesso = [acessos objectAtIndex:0];
-    return acesso;
+    NSArray *usuarios = [self.contexto executeFetchRequest:request error:&error];
+    NSLog(@"Erro: %@", error);
+    Colaborador *colaborador;
+    if (![usuarios count] < 1)
+    {
+        colaborador = [usuarios objectAtIndex:0];
+    }
+    return colaborador;
 }
 
-- (BOOL) existAcessoWithGuid:(NSString *)guid {
-    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Acesso"];
-    NSString *condicao = [NSString stringWithFormat:@"guid = '%@'", guid];
+- (BOOL) existWithGuid:(NSString *)guid {
+    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:TABLE];
+    NSString *condicao = [NSString stringWithFormat:@"guid='%@'", guid];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:condicao];
     [request setPredicate:predicate];
-    NSArray *acessos = [self.contexto executeFetchRequest:request error:nil];
+    NSArray *colaboradores = [self.contexto executeFetchRequest:request error:nil];
     BOOL result = YES;
-    Acesso *acesso = [acessos objectAtIndex:0];
-    if (acesso.guid == @"") {
+    Colaborador *colaborador = [colaboradores objectAtIndex:0];
+    if (colaborador.guid == @"") {
         result = NO;
     }
     return result;

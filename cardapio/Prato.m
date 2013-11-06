@@ -1,16 +1,16 @@
 //
-//  Cardapio.m
+//  Prato.m
 //  cardapio
 //
-//  Created by Administrador on 19/10/13.
+//  Created by Alan A de Almeida on 05/11/13.
 //  Copyright (c) 2013 fivebits. All rights reserved.
 //
 
-#import "Cardapio.h"
+#import "Prato.h"
 #import "Avaliacao.h"
 
 
-@implementation Cardapio
+@implementation Prato
 
 @dynamic codigo;
 @dynamic descricao;
