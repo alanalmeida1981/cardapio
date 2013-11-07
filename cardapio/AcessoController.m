@@ -26,6 +26,11 @@
     return self;
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
 - (void) keyboardDidShow:(NSNotification *) notification {
     [self.scrollView setFrame:CGRectMake(0, -190, 320, 800)];
 }

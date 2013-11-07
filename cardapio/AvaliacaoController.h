@@ -29,7 +29,7 @@
 @property (strong, nonatomic) Avaliacao *avaliacao;
 
 - (IBAction)sair:(id)sender;
-- (IBAction)salvar:(id)sender;
+- (IBAction)confirmar:(id)sender;
 
 
 @end

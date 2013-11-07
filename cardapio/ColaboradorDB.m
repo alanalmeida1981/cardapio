@@ -105,12 +105,16 @@ static ColaboradorDB *instance;
 - (Colaborador *) get{
     NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:TABLE];
     NSError *error;
-    NSArray *usuarios = [self.contexto executeFetchRequest:request error:&error];
+    NSArray *colaboradores = [self.contexto executeFetchRequest:request error:&error];
     NSLog(@"Erro: %@", error);
     Colaborador *colaborador;
-    if (![usuarios count] < 1)
+    @try
     {
-        colaborador = [usuarios objectAtIndex:0];
+        colaborador = [colaboradores objectAtIndex:0];
+    }
+    @catch (NSException *ex)
+    {
+        
     }
     return colaborador;
 }
