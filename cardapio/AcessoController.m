@@ -26,10 +26,32 @@
     return self;
 }
 
+- (void) keyboardDidShow:(NSNotification *) notification {
+    [self.scrollView setFrame:CGRectMake(0, -190, 320, 800)];
+}
+
+- (void) keyboardDidHide:(NSNotification *) notification {
+    [self.scrollView setFrame:CGRectMake(0, 0, 320, 560)];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{    
+    NSLog(@"%@",textField.text);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name: UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (keyboardDidHide:) name: UIKeyboardDidHideNotification object:nil];
+    
+    self.txtNome.delegate = self;
+    self.txtSenha.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +61,8 @@
 }
 
 - (IBAction)btnEntrar:(id)sender {
+    [self.scrollView setFrame:CGRectMake(0, 0, 320, 560)];
+    
     NSString *nome = self.txtNome.text;
     NSString *senha = self.txtSenha.text;
     //__weak AcessoController *this = self;

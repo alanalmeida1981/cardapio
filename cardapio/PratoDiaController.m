@@ -41,7 +41,6 @@
             [alert show];
         } else {
             NSString *data = [cardapioDia valueForKey:@"data"];
-            data = [data substringToIndex:10];
             NSString *descricao = [cardapioDia valueForKey:@"descricao"];
             NSString *foto = [cardapioDia valueForKey:@"foto"];
             foto = [NSString stringWithFormat:@"%@%@", URL, foto];

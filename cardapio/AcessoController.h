@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ColaboradorDB.h"
 
-@interface AcessoController : UIViewController
+@interface AcessoController : UIViewController<UITextFieldDelegate>
+
+@property (strong, nonatomic) Colaborador *colaborador;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNome;
 @property (weak, nonatomic) IBOutlet UITextField *txtSenha;
 
-@property (strong, nonatomic) Colaborador *colaborador;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)btnEntrar:(id)sender;
 
