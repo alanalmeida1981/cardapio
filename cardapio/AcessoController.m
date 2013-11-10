@@ -78,17 +78,23 @@
             NSString *empresaID = [empresa valueForKey:@"id"];
             NSString *nome = [[UIDevice currentDevice] name];
             nome = [nome stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-            ColaboradorDB *db = [ColaboradorDB sharedInstance];
-            self.colaborador = [db get];
-            if (self.colaborador == nil){
+            NSFileManager *filemgr;
+            NSString *docsDir;
+            NSArray *dirPaths;
+            filemgr = [NSFileManager defaultManager];
+            dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            docsDir = [dirPaths objectAtIndex:0];
+            self.filePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"colaborador.archive"]];
+            if (![filemgr fileExistsAtPath:self.filePath])
+            {
                 [ColaboradorParser addWithEmpresa:empresaID andNome:nome withCallback:^(NSDictionary *colaborador) {
-                    self.colaborador = [db insert];
-                    self.colaborador.guid = [colaborador valueForKey:@"guid"];
-                    self.colaborador.nome = nome;
-                    [db save];
+                    NSLog(@"colaborador: %@", colaborador);
+                    NSString *guid = [colaborador valueForKey:@"guid"];
+                    [self archivingWith:guid];
+                    [self performSegueWithIdentifier:@"acesso" sender:self];
                 }];
-            }
-            [self performSegueWithIdentifier:@"acesso" sender:self];
+            } else
+                [self performSegueWithIdentifier:@"acesso" sender:self];
         }
         else
         {
@@ -97,6 +103,11 @@
         }
 
     }];
+}
+
+- (void) archivingWith:(NSString *)guid
+{
+    [NSKeyedArchiver archiveRootObject:guid toFile:self.filePath];
 }
 
 @end

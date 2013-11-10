@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (nonatomic, retain) NSString *filePath;
+
 - (IBAction)btnEntrar:(id)sender;
 
 @end

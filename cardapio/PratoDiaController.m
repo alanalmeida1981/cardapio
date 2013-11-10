@@ -30,10 +30,23 @@
     return self;
 }
 
+- (NSString *) unarchivingWith {
+    NSFileManager *filemgr;
+    NSString *docsDir;
+    NSArray *dirPaths;
+    filemgr = [NSFileManager defaultManager];
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    NSString *filePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"colaborador.archive"]];
+    NSString *guid;
+    if ([filemgr fileExistsAtPath:filePath])
+        guid = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    return guid;
+}
+
+
 - (void)loadCardapio{
-    ColaboradorDB *db = [ColaboradorDB sharedInstance];
-    Colaborador *colaborador = [db get];
-    NSString *guid = [colaborador valueForKey:@"guid"];
+    NSString *guid = [self unarchivingWith];
     [CardapioParser parseWithGuid:guid withCallback:^(NSDictionary *cardapioDia) {
         //NSLog(@"cardapio: %@", cardapioDia);
         if (cardapioDia == NULL) {
@@ -75,8 +88,8 @@
 
 - (void)viewDidLoad
 {
+    [self loadCardapio];
     [super viewDidLoad];
-	self.loadCardapio;
 }
 
 - (void)didReceiveMemoryWarning
