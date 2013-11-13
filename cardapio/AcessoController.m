@@ -66,6 +66,7 @@
 }
 
 - (IBAction)btnEntrar:(id)sender {
+    [self.txtNome resignFirstResponder];
     [self.scrollView setFrame:CGRectMake(0, 0, 320, 560)];
     
     NSString *nome = self.txtNome.text;

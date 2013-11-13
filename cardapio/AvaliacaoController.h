@@ -10,7 +10,7 @@
 #import "AvaliacaoDB.h"
 #import "TQStarRatingView.h"
 
-@interface AvaliacaoController : UIViewController<StarRatingViewDelegate>
+@interface AvaliacaoController : UIViewController<UITextFieldDelegate,StarRatingViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblNotaComida;
 @property (nonatomic,strong)TQStarRatingView *ratingComida;
@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtComentarios;
 
 @property (strong, nonatomic) Avaliacao *avaliacao;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)sair:(id)sender;
 - (IBAction)confirmar:(id)sender;

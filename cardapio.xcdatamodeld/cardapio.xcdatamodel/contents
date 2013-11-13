@@ -10,6 +10,7 @@
     <entity name="Colaborador" representedClassName="Colaborador" syncable="YES">
         <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="empresa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Empresa" syncable="YES"/>
     </entity>
     <entity name="Empresa" representedClassName="Empresa" syncable="YES">
         <attribute name="codigo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -23,8 +24,8 @@
     </entity>
     <elements>
         <element name="Avaliacao" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Colaborador" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Empresa" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Prato" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Colaborador" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

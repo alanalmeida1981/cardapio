@@ -31,23 +31,54 @@
     return NO;
 }
 
+- (void) keyboardDidShow:(NSNotification *) notification {
+    [self.scrollView setFrame:CGRectMake(0, -130, 320, 800)];
+}
+
+- (void) keyboardDidHide:(NSNotification *) notification {
+    [self.scrollView setFrame:CGRectMake(0, 0, 320, 560)];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    NSLog(@"%@",textField.text);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _ratingComida = [[TQStarRatingView alloc] initWithFrame:CGRectMake(23, 86, 280, 48) numberOfStar:5];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name: UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (keyboardDidHide:) name: UIKeyboardDidHideNotification object:nil];
+    
+    self.txtComentarios.delegate = self;
+    
+    self.lblNotaComida.text = @"10.0";
+    _ratingComida = [[TQStarRatingView alloc] initWithFrame:CGRectMake(20, 86, 280, 48) numberOfStar:5];
     _ratingComida.delegate = self;
     _ratingComida.tag = 1;
-    _ratingLimpeza = [[TQStarRatingView alloc] initWithFrame:CGRectMake(23, 157, 280, 48) numberOfStar:5];
+    self.lblNotaLimpeza.text = @"10.0";
+    _ratingLimpeza = [[TQStarRatingView alloc] initWithFrame:CGRectMake(20, 156, 280, 48) numberOfStar:5];
     _ratingLimpeza.delegate = self;
     _ratingLimpeza.tag = 2;
-    _ratingAtendimento = [[TQStarRatingView alloc] initWithFrame:CGRectMake(23, 228, 280, 48) numberOfStar:5];
+    self.lblNotaAtendimento.text = @"10.0";
+    _ratingAtendimento = [[TQStarRatingView alloc] initWithFrame:CGRectMake(20, 227, 280, 48) numberOfStar:5];
     _ratingAtendimento.delegate = self;
     _ratingAtendimento.tag = 3;
-    _ratingPontualidade = [[TQStarRatingView alloc] initWithFrame:CGRectMake(23, 299, 280, 48) numberOfStar:5];
+    self.lblNotaPontualidade.text = @"10.0";
+    _ratingPontualidade = [[TQStarRatingView alloc] initWithFrame:CGRectMake(20, 295, 280, 48) numberOfStar:5];
     _ratingPontualidade.delegate = self;
     _ratingPontualidade.tag = 4;
     AvaliacaoDB *db = [AvaliacaoDB sharedInstance];
     Avaliacao *avaliacao = [db getAvaliacao];
+    self.avaliacao.comida = @([self.lblNotaComida.text floatValue]);
+    self.avaliacao.limpeza = @([self.lblNotaLimpeza.text floatValue]);
+    self.avaliacao.atendimento = @([self.lblNotaAtendimento.text floatValue]);
+    self.avaliacao.pontualidade = @([self.lblNotaPontualidade.text floatValue]);
     if (avaliacao != nil) {
         [_ratingComida setScore:[avaliacao.comida floatValue] withAnimation:YES];
         [_ratingLimpeza setScore:[avaliacao.limpeza floatValue] withAnimation:YES];
