@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cardapio/AcessoController.m"
-            timestampString = "405998203.275594"
+            timestampString = "406254624.091013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-btnEntrar:"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-entrar:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,38 +106,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cardapio/AcessoController.m"
-            timestampString = "405998203.275594"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-btnEntrar:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "cardapio/AcessoController.m"
-            timestampString = "405998203.275594"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-btnEntrar:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "cardapio/AcessoController.m"
             timestampString = "405482211.727657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -170,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cardapio/AcessoController.m"
-            timestampString = "405998203.275594"
+            timestampString = "406254624.091013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-btnEntrar:"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-entrar:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cardapio/AcessoController.m"
-            timestampString = "405998203.275594"
+            timestampString = "406254624.091013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "-btnEntrar:"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-entrar:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,12 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cardapio/AcessoController.m"
-            timestampString = "405998203.275594"
+            timestampString = "406254624.091013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-btnEntrar:"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-entrar:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -234,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cardapio/AcessoController.m"
-            timestampString = "405998203.275594"
+            timestampString = "406254624.091013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "-archivingWith:"
             landmarkType = "5">
          </BreakpointContent>

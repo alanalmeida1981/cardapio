@@ -15,11 +15,13 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNome;
 @property (weak, nonatomic) IBOutlet UITextField *txtSenha;
+@property (weak, nonatomic) IBOutlet UIButton *btnEntrar;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, retain) NSString *filePath;
 
-- (IBAction)btnEntrar:(id)sender;
+- (IBAction)entrar:(id)sender;
+
 
 @end

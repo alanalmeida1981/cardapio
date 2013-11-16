@@ -65,10 +65,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)btnEntrar:(id)sender {
-    [self.txtNome resignFirstResponder];
-    [self.scrollView setFrame:CGRectMake(0, 0, 320, 560)];
-    
+- (IBAction)entrar:(id)sender {
+    //[self.scrollView setFrame:CGRectMake(0, 0, 320, 560)];
+    self.btnEntrar.enabled = NO;
     NSString *nome = self.txtNome.text;
     NSString *senha = self.txtSenha.text;
     //__weak AcessoController *this = self;
@@ -102,7 +101,7 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Nome e/ou senha não existe." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
-
+        self.btnEntrar.enabled = YES;
     }];
 }
 
