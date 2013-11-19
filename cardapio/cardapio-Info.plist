@@ -29,9 +29,7 @@
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>iPhone</string>
 	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
+	<array/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
